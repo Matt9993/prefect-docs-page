@@ -1,0 +1,26 @@
+name: Prefect Sphinx docs Pipeline to Production
+
+on:
+  push:
+    branches:
+      - main
+jobs:
+  Building project:
+    runs-on: ubuntu-latest
+    container:
+      image: python:3.8-slim
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      - name: Build docs
+        run:
+          - apt-get update && apt-get install gcc -y && apt-get install git -y && apt-get clean && pip install virtualenv
+          - apt-get install graphviz -y
+          - virtualenv venv
+          - . venv/bin/activate
+          - python -V
+          - pip install --upgrade pip
+          - pip install -r requirements.txt
+          - pip install git+https://github.com/sphinx-contrib/prefecttask
+          - cd docs
+          - sphinx-build -b html . html

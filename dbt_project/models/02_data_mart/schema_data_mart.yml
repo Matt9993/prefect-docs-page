@@ -1,0 +1,10 @@
+version: 2
+
+models:
+  - name: dim_customer
+    description: Customer dimension table
+    columns:
+      - name: CUST_KEY
+        tests:
+          - unique
+          - not_null
