@@ -1,5 +1,0 @@
-Common folder files
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
-.. automodule:: src.common
-   :members:
