@@ -17,9 +17,6 @@ my_path = os.path.dirname(os.path.abspath(__file__))
 PROFILES_DIR = os.path.join(my_path, "../.dbt")
 
 
-# get s3 website endpoint
-web_endpoint = "ds"  # Secret("s3_dbt_docs_endpoint").get()
-
 # init the custom tasks
 profiler = DbtProfiler()
 
