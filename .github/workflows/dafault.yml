@@ -14,4 +14,5 @@ jobs:
       # Standard drop-in approach that should work for most people.
       - uses: ammaraskar/sphinx-action@master
         with:
-          docs-folder: "docs/"
+          build-command: "sphinx-build -b html . ../docs"
+          docs-folder: "sp-docs/"
