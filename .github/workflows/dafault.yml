@@ -14,7 +14,12 @@ jobs:
         uses: actions/checkout@v2
       - name: install and docs build
         run: |
-          sudo rm /var/lib/dpkg/lock-frontend
+          sudo killall apt apt-get
+          sudo rm /var/lib/apt/lists/lock
+          sudo rm /var/cache/apt/archives/lock
+          sudo rm /var/lib/dpkg/lock*
+          sudo dpkg --configure -a
+          sudo apt update
           sudo apt-get update && apt-get install gcc -yqq && apt-get install git -yqq && apt-get clean \
           && rm -rf /var/lib/apt/lists/* && pip install virtualenv
           apt-get install graphviz -y
