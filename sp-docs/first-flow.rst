@@ -1,4 +1,4 @@
-First Flow (hello flow)
+First Flow (example)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. flowviz:: src.pipelines.first_flow.flow
