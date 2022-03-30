@@ -20,3 +20,8 @@ jobs:
           pip install git+https://github.com/sphinx-contrib/prefecttask
           cd sp-docs/
           sphinx-build -b html . ../docs
+
+      - uses: actions/upload-artifact@v3
+        with:
+          name: docs
+          path: docs/
