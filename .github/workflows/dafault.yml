@@ -11,9 +11,14 @@ jobs:
 
     steps:
       - uses: actions/checkout@v1
-      # Standard drop-in approach that should work for most people.
-      - uses: ammaraskar/sphinx-action@master
-        with:
-          pre-build-command: "pip install git+https://github.com/sphinx-contrib/prefecttask"
-          build-command: "sphinx-build -b html . ../docs"
-          docs-folder: "sp-docs/"
+        run: |
+          apt-get update && apt-get install gcc -y && apt-get install git -y && apt-get clean && pip install virtualenv
+          apt-get install graphviz -y
+          virtualenv venv
+          . venv/bin/activate
+          python -V
+          pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install git+https://github.com/sphinx-contrib/prefecttask
+          cd sp-docs/
+          sphinx-build -b html . ../docs
