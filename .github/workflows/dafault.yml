@@ -10,9 +10,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
       - name: install and docs build
         run: |
-          apt-get update && apt-get install gcc -y && apt-get install git -y && apt-get clean && pip install virtualenv
+          apt-get update && apt-get install gcc -yqq && apt-get install git -yqq && apt-get clean \
+          && rm -rf /var/lib/apt/lists/* && pip install virtualenv
           apt-get install graphviz -y
           virtualenv venv
           . venv/bin/activate
