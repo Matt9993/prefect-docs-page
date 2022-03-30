@@ -2,6 +2,17 @@
 
 Here is the hosted Github page: https://matt9993.github.io/prefect-docs-page/
 
+
+
+## Prerequisites
+```
+Python
+
+Graphviz library in any way graphviz library installed on your system/host machine that builds the documentation.
+
+    e.g. apt-get install graphviz -y
+```
+
 ## Docs folder
 This folder contains everything to generate the final document about the flows.
 
@@ -22,8 +33,7 @@ Keeps all the prefect flow files.
 Keeps all the putil function files.
 
 ## How to use the prefecttask project for the docs
-It is a standalone github repo, because this package is still very new and there is 
-no way to install it with pip install. 
+It is a standalone github repo, because this package is still very new and there is no way to install it with pip install. 
 At least for me it failed with the error message saying no version for package.
 
 So I cloned the repo and installed it with the
@@ -36,12 +46,12 @@ https://github.com/sphinx-contrib/prefecttask
 
 
 ## Sphinx docs
-The documentations with Sphinx were generated in the
+The base folder for the documentations with Sphinx project initialised were generated in the
 ```
 sp-docs
 ```
 
-Then after creating the rst files, the following command was used to generate the actual html docs.
+Then after creating the rst files (still in sp-docs), the following command was used to generate the actual html docs.
 ```
 sphinx-build -b html . ../docs
 ```
