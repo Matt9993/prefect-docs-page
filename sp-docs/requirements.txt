@@ -1,0 +1,6 @@
+prefect[snowflake]
+sphinxcontrib-prefectviz==0.2.0
+sphinx
+boto3
+sphinx-rtd-theme==1.0.0
+sphinx-autopackagesummary==1.3
