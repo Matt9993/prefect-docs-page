@@ -21,7 +21,8 @@ jobs:
           cd sp-docs/
           sphinx-build -b html . ../docs
 
-      - uses: actions/upload-artifact@v3
+      - name: Deploy
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
         with:
-          name: docs
-          path: docs/
+          branch: main
+          folder: docs/
