@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v1
+      - name: install and docs build
         run: |
           apt-get update && apt-get install gcc -y && apt-get install git -y && apt-get clean && pip install virtualenv
           apt-get install graphviz -y
