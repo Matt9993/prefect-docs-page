@@ -20,8 +20,6 @@ jobs:
           pip install git+https://github.com/sphinx-contrib/prefecttask
           cd sp-docs/
           sphinx-build -b html . ../docs
-          cd ../docs && touch .nojekyll && echo "c" > .nojekyll
-          ls -la
 
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4.2.5
