@@ -59,12 +59,11 @@ sphinx-build -b html . ../docs
 
 ## Updating the docs github page
 Currently it's not automated.
-After the docs were generated/updated a git push was executed
+After the docs were generated/updated from the sp-docs folder to the docs folder a git push was executed
 to update the files in the repository.
 
-To automate the process you either use Github actions to generate/update the docs in your repo, 
-or I'll update the repo with a bash script that automates the docs generation
-and github push.
+An automated github action is available in the repo but the .nojekyll file was added manually because the
+pipeline is not able to copy the .nojekyll file the branch in the end.
 
 
 ## Special thanks
