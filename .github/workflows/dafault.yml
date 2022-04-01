@@ -20,7 +20,7 @@ jobs:
           pip install git+https://github.com/sphinx-contrib/prefecttask
           cd sp-docs/
           sphinx-build -b html . ../docs
-          ls
+          ls -la
           cp .nojekyll ../docs
 
       - name: Deploy
